@@ -10,39 +10,39 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: () => import('../components/Home.vue')
+      component: () => import('../components/pages/Home.vue')
     },
     {
       path: '/aboutus',
       name: 'AboutUs',
-      component: () => import('../components/AboutUs.vue')
+      component: () => import('../components/pages/AboutUs.vue')
     },
      {
       path: '/product/:id',// params 參數 id,動態路由
       name: 'Product',
-       component: () => import('../components/Product.vue'),
+       component: () => import('../components/pages/Product.vue'),
        //巢狀路由(嵌套)
        children: [
           {
             path: 'shop', // 不可加上 /，否則將回根目錄
-            component: () => import('../components/Shop.vue'),
+            component: () => import('../components/pages/Shop.vue'),
           },
        ]
     },
     {
       path: '/order',
       name: 'Order',
-      component: () => import('../components/Order.vue'),
+      component: () => import('../components/pages/Order.vue'),
       redirect: '/order/one',//重新導向(redirect)
       //巢狀路由(嵌套)
       children: [
         {
           path: 'one',
-          component: () => import('../components/OrderOne.vue'),
+          component: () => import('../components/pages/OrderOne.vue'),
         },
         {
           path: 'two',
-          component: () => import('../components/OrderTwo.vue'),
+          component: () => import('../components/pages/OrderTwo.vue'),
         }
       ]
     }
