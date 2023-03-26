@@ -1,7 +1,11 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <router-link :to="{ path: '/' }">Home</router-link>
+    <router-link :to="{ name: 'AboutUs' }">AboutUs</router-link>
+     <router-link :to="{ path: '/product' }">Product</router-link>
+
+    <router-link :to="{ path: '/order' }">order</router-link>
+      <router-view/>
   </div>
 </template>
 
